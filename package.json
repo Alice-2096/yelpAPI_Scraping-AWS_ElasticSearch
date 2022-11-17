@@ -1,0 +1,22 @@
+{
+  "name": "yelpapit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.cjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin",
+    "dev": "nodemon ./bin"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1256.0",
+    "dotenv": "^16.0.3",
+    "esm": "^3.2.25",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.20",
+    "yelp-fusion": "^3.0.0"
+  }
+}
