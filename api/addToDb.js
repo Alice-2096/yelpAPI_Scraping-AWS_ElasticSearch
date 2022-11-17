@@ -6,19 +6,19 @@ export default function addToDb(data) {
   const ddb = new AWS.DynamoDB({ apiVersion: '2012-08-10' });
   const tableName = 'yelp-restaurant';
 
-  for (const hotel in data) {
+  for (const hotel of data) {
     let date = new Date().toJSON();
-    console.log(date);
+    console.log(hotel);
     let params = {
       TableName: tableName,
       Item: {
-        id: { S: hotel['id'] },
+        business_id: { S: hotel.id },
         insertedAtTimestamp: { S: date },
-        name: { S: hotel['name'] },
-        address: { S: JSON.stringify(hotel['location']) },
-        review_counts: { S: hotel['review_count'] },
-        ratings: { S: hotel['rating'] },
-        phone: { S: hotel['phone'] },
+        name: { S: hotel.name },
+        address: { S: JSON.stringify(hotel.location) },
+        review_counts: { N: hotel.review_count.toString() },
+        ratings: { N: hotel.rating.toString() },
+        phone: { S: hotel.phone },
       },
     };
     // Call DynamoDB to add the item to the table
@@ -26,7 +26,7 @@ export default function addToDb(data) {
       if (err) {
         console.log('Error', err);
       } else {
-        console.log('Success', data);
+        console.log('Success');
       }
     });
   }
