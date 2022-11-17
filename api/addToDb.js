@@ -8,7 +8,6 @@ export default function addToDb(data) {
 
   for (const hotel of data) {
     let date = new Date().toJSON();
-    console.log(hotel);
     let params = {
       TableName: tableName,
       Item: {
