@@ -4,7 +4,7 @@ const app = express();
 const port = 3000;
 
 app.get('/', async (req, res) => {
-  scrape();
+  
 });
 
 app.listen(port, () => {

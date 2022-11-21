@@ -1,6 +1,7 @@
 import addToDb from './addToDb.js';
 import yelpData from './yelpAPI.js';
 
+//collect 1000 hotel information from Yelp 
 export default async function () {
   let offset = 0;
   try {
